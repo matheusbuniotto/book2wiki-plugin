@@ -25,4 +25,19 @@ that `wiki-ingest` later reads from.
 
 - Raw sources are immutable. Do not edit files under `<book-slug>/chapters/`.
 - `$ARGUMENTS` may contain the file path the user passed; if empty, ask for it.
-- First run downloads dependencies via uv (a few seconds); subsequent runs are instant.
+
+## Runtime
+
+The `book2wiki` launcher needs a Python runtime and finds one automatically: it prefers `uv`
+(zero setup), else builds a one-time cached virtualenv with the user's `python3`. First run
+takes a few seconds; later runs are instant.
+
+If `book2wiki` exits with "no Python runtime available", the user has neither `uv` nor
+`python3`. Offer to install uv for them (one line, no admin) and then re-run:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+After installing, `uv` lands in `~/.local/bin` — that may not be on PATH in the current
+session, so either start a new shell or call `~/.local/bin/uv` for the very next run.

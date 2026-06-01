@@ -41,8 +41,20 @@ Or test locally without installing:
 claude --plugin-dir ./book2wiki-plugin
 ```
 
-Requires [`uv`](https://docs.astral.sh/uv/) (the extractor is a self-contained uv script;
-dependencies install automatically on first run).
+### Runtime for the extractor
+
+The `book2wiki` extractor needs a Python runtime, and the launcher finds one for you:
+
+1. **[`uv`](https://docs.astral.sh/uv/)** (recommended) — zero setup; it manages its own
+   Python and installs deps from the script's inline metadata on first run.
+2. **`python3` (no uv)** — the launcher builds a one-time cached virtualenv and installs the
+   deps with pip. Works on system Python (incl. macOS 3.9).
+3. **Neither** — it prints exact install steps and exits. To get uv (one line, no admin):
+   ```
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+The skills and wiki workflows themselves need no Python — only the extraction step does.
 
 ## Usage
 
