@@ -1,0 +1,12 @@
+{
+  "name": "book2wiki",
+  "description": "Turn PDFs and EPUBs into a living, interlinked knowledge wiki that an LLM builds and maintains. Extraction CLI + ingest/query/lint workflows based on Karpathy's LLM-wiki pattern.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Matheus Buniotto Aguilar"
+  },
+  "homepage": "https://github.com/matheusbuniotto/book2wiki-plugin",
+  "repository": "https://github.com/matheusbuniotto/book2wiki-plugin",
+  "license": "MIT",
+  "keywords": ["wiki", "knowledge-base", "pdf", "epub", "rag", "notes", "obsidian"]
+}
