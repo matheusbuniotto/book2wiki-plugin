@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="book2wiki — a living, interlinked wiki your LLM builds from your books">
+  <defs>
+    <linearGradient id="hub" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="book" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#e3e1d9"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .serif { font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; }
+      .mono  { font-family: 'DM Mono', 'SF Mono', 'DejaVu Sans Mono', monospace; }
+    </style>
+  </defs>
+
+  <!-- paper background -->
+  <rect width="1200" height="460" fill="#f7f6f3"/>
+  <rect width="1200" height="460" fill="url(#dots)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#2563eb"/>
+
+  <!-- ── left: title block ─────────────────────────────────────────── -->
+  <text x="72" y="156" class="serif" font-size="82" fill="#1a1917" letter-spacing="-1">book<tspan fill="#2563eb">2</tspan>wiki</text>
+  <text x="76" y="206" font-size="22" fill="#5c5a54">A living, interlinked wiki —</text>
+  <text x="76" y="236" font-size="22" fill="#5c5a54">your LLM builds it from your books.</text>
+
+  <g>
+    <rect x="74" y="270" width="318" height="42" rx="9" fill="#ffffff" stroke="#e0dfd8"/>
+    <circle cx="96" cy="291" r="4" fill="#2563eb"/>
+    <text x="110" y="296" class="mono" font-size="15" fill="#2563eb">/book2wiki:wiki-ingest</text>
+  </g>
+  <text x="76" y="346" class="mono" font-size="13" fill="#9b9890">PDF · EPUB  →  markdown  →  knowledge graph</text>
+
+  <!-- ── middle: the book (raw source) ─────────────────────────────── -->
+  <g>
+    <rect x="556" y="176" width="104" height="132" rx="8" fill="#ffffff" stroke="#e0dfd8" stroke-width="2"/>
+    <rect x="540" y="176" width="24" height="132" rx="6" fill="url(#book)"/>
+    <line x1="584" y1="208" x2="640" y2="208" stroke="#d7d5cd" stroke-width="3" stroke-linecap="round"/>
+    <line x1="584" y1="226" x2="640" y2="226" stroke="#d7d5cd" stroke-width="3" stroke-linecap="round"/>
+    <line x1="584" y1="244" x2="628" y2="244" stroke="#d7d5cd" stroke-width="3" stroke-linecap="round"/>
+    <line x1="584" y1="262" x2="640" y2="262" stroke="#d7d5cd" stroke-width="3" stroke-linecap="round"/>
+    <path d="M626,168 h16 v40 l-8,-9 l-8,9 z" fill="#f59e0b"/>
+  </g>
+
+  <!-- flow: book → wiki -->
+  <text x="772" y="214" class="mono" font-size="12" fill="#5c5a54" text-anchor="middle">ingest · cross-link · lint</text>
+  <path d="M674,238 C 760,238 808,238 878,238" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <!-- ── right: the wiki as an interlinked graph ───────────────────── -->
+  <g stroke="#2563eb" stroke-width="1.5">
+    <!-- hub → satellites -->
+    <g opacity="0.4">
+      <line x1="930" y1="238" x2="812" y2="120"/>
+      <line x1="930" y1="238" x2="1066" y2="128"/>
+      <line x1="930" y1="238" x2="1092" y2="252"/>
+      <line x1="930" y1="238" x2="1010" y2="356"/>
+      <line x1="930" y1="238" x2="855" y2="360"/>
+      <line x1="930" y1="238" x2="788" y2="252"/>
+    </g>
+    <!-- satellite ↔ satellite (the interlinks) -->
+    <g opacity="0.18">
+      <line x1="812" y1="120" x2="788" y2="252"/>
+      <line x1="1066" y1="128" x2="1092" y2="252"/>
+      <line x1="855" y1="360" x2="1010" y2="356"/>
+    </g>
+  </g>
+
+  <!-- hub node -->
+  <circle cx="930" cy="238" r="40" fill="url(#hub)"/>
+  <text x="930" y="246" class="serif" font-size="26" fill="#ffffff" text-anchor="middle" font-style="italic">wiki</text>
+
+  <!-- satellite nodes + labels -->
+  <g>
+    <circle cx="812" cy="120" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="800" y="124" class="mono" font-size="13" fill="#5c5a54" text-anchor="end">consistency</text>
+
+    <circle cx="1066" cy="128" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="1078" y="132" class="mono" font-size="13" fill="#5c5a54">trade-offs</text>
+
+    <circle cx="1092" cy="252" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="1104" y="256" class="mono" font-size="13" fill="#5c5a54">storage</text>
+
+    <circle cx="1010" cy="356" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="1010" y="378" class="mono" font-size="13" fill="#5c5a54" text-anchor="middle">partitioning</text>
+
+    <circle cx="855" cy="360" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="855" y="382" class="mono" font-size="13" fill="#5c5a54" text-anchor="middle">replication</text>
+
+    <circle cx="788" cy="252" r="7" fill="#ffffff" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="776" y="256" class="mono" font-size="13" fill="#5c5a54" text-anchor="end">streams</text>
+  </g>
+</svg>

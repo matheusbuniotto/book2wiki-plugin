@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="book2wiki — a living, interlinked wiki your LLM builds from your books" width="100%">
+</p>
+
 # book2wiki
 
 A Claude Code plugin that turns your **PDFs and EPUBs into a living, interlinked wiki** that
